@@ -18,7 +18,7 @@ public class MongoInitialize {
 		@PostConstruct
 	    public void initialize() {
 	        try {
-	        	ConnectionString connectionString = new ConnectionString("mongodb+srv://amansharma193:1932815aman@cluster0.wpqkg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+	        	ConnectionString connectionString = new ConnectionString("mongodb+srv://<username>:<password>@cluster0.wpqkg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
 	        	MongoClientSettings settings = MongoClientSettings.builder()
 	        	        .applyConnectionString(connectionString)
 	        	        .build();

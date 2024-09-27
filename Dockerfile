@@ -19,7 +19,7 @@ FROM eclipse-temurin:17-jdk-alpine
 WORKDIR /app
 
 # Copy the JAR file from the build stage to the final stage
-COPY --from=build /app/target/my-spring-boot-app.jar /app/app.jar
+COPY --from=build /app/target/first-0.0.1-SNAPSHOT.jar /app/app.jar
 
 # Expose port 8080 (optional, for documentation purposes)
 EXPOSE 8080

@@ -5,7 +5,7 @@ FROM openjdk:17-jdk-alpine
 WORKDIR /app
 
 # Copy the current directory contents into the container at /app
-COPY target/my-spring-boot-app.jar /app/app.jar
+COPY target/first-0.0.1-SNAPSHOT.jar.jar /app/app.jar
 
 # Expose port 8080
 EXPOSE 8080

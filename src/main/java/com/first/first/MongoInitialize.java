@@ -4,6 +4,7 @@ import java.io.*;
 
 import javax.annotation.PostConstruct;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import com.mongodb.ConnectionString;
@@ -14,11 +15,12 @@ import com.mongodb.reactivestreams.client.MongoDatabase;
 
 @Service
 public class MongoInitialize {
-
+	@Value("${spring.data.mongodb.uri}")
+	private String mongo_uri;
 		@PostConstruct
 	    public void initialize() {
 	        try {
-	        	ConnectionString connectionString = new ConnectionString("mongodb+srv://amansharma193:1932815aman@cluster0.wpqkg.mongodb.net/myFirstDatabase?retryWrites=true&w=majority");
+	        	ConnectionString connectionString = new ConnectionString(mongo_uri);
 	        	MongoClientSettings settings = MongoClientSettings.builder()
 	        	        .applyConnectionString(connectionString)
 	        	        .build();
